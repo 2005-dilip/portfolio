@@ -110,18 +110,49 @@
 }
 
 /* Title */
-.hero__title {
-  font-family: var(--font-mono);
-  font-size: clamp(var(--text-base), 2.5vw, var(--text-xl));
-  color: var(--color-accent);
-  font-weight: 400;
+.hero__title-wrapper {
   margin-bottom: var(--space-6);
-  animation: fade-up 0.6s 0.2s ease both;
+  display: flex;
 }
 
-.hero__title::before {
-  content: '> ';
-  opacity: 0.5;
+.hero__title {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.45rem 1.15rem;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 24px rgba(56, 189, 248, 0.22);
+  animation: title-pop-reveal 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s both;
+  will-change: transform, opacity;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero__title:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.5), 0 0 32px rgba(56, 189, 248, 0.45);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.hero__title-spark {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  animation: spark-spin 8s linear infinite;
+}
+
+.hero__title-text {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(var(--text-base), 2vw, var(--text-xl));
+  background: linear-gradient(90deg, #38bdf8 0%, #a78bfa 40%, #34d399 75%, #38bdf8 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: text-shimmer 4s linear infinite;
 }
 
 /* Summary */
@@ -241,6 +272,34 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes title-pop-reveal {
+  0% {
+    opacity: 0;
+    transform: perspective(600px) translateY(30px) scale(0.7) rotateX(25deg);
+    filter: blur(10px);
+  }
+  65% {
+    opacity: 1;
+    transform: perspective(600px) translateY(-5px) scale(1.05) rotateX(-4deg);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(600px) translateY(0) scale(1) rotateX(0deg);
+    filter: blur(0px);
+  }
+}
+
+@keyframes text-shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes spark-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes fade-in {
