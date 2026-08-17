@@ -1,6 +1,6 @@
 <section id="achievements" class="section achievements" aria-labelledby="achievements-heading">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <span class="section-tag">Achievements</span>
       <h2 class="section-title" id="achievements-heading">
         Recognition &amp; <span>Awards</span>
@@ -8,8 +8,8 @@
     </div>
 
     <div class="achievements__grid">
-      @for (achievement of achievements(); track achievement.id) {
-        <article class="achievements__card card" aria-label="{{ achievement.title }}">
+      @for (achievement of achievements(); track achievement.id; let i = $index) {
+        <article [class]="'achievements__card card reveal reveal-stagger-' + (i % 4 + 1)" aria-label="{{ achievement.title }}">
 
           <!-- Trophy icon header -->
           <div class="achievements__icon" aria-hidden="true">

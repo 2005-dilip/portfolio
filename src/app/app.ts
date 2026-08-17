@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { NavbarComponent }        from './components/navbar/navbar';
 import { HeroComponent }          from './components/hero/hero';
 import { AboutComponent }         from './components/about/about';
@@ -10,6 +10,7 @@ import { CertificationsComponent } from './components/certifications/certificati
 import { PublicationsComponent }  from './components/publications/publications';
 import { ContactComponent }       from './components/contact/contact';
 import { FloatingResumeComponent } from './components/floating-resume/floating-resume';
+import { ScrollRevealService }     from './services/scroll-reveal.service';
 
 @Component({
   selector: 'app-root',
@@ -30,4 +31,10 @@ import { FloatingResumeComponent } from './components/floating-resume/floating-r
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {}
+export class App implements OnInit {
+  private readonly scrollReveal = inject(ScrollRevealService);
+
+  ngOnInit(): void {
+    this.scrollReveal.init();
+  }
+}

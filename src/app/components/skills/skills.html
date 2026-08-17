@@ -1,6 +1,6 @@
 <section id="skills" class="section skills" aria-labelledby="skills-heading">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <span class="section-tag">Skills</span>
       <h2 class="section-title" id="skills-heading">
         Technical <span>Stack</span>
@@ -11,8 +11,8 @@
     </div>
 
     <div class="skills__grid">
-      @for (group of skillGroups(); track group.label) {
-        <div class="skills__group card">
+      @for (group of skillGroups(); track group.label; let i = $index) {
+        <div class="skills__group card reveal" [class]="'skills__group card reveal reveal-stagger-' + (i % 4 + 1)">
           <h3 class="skills__group-label">{{ group.label }}</h3>
           <div class="skills__items" role="list">
             @for (item of group.items; track item) {

@@ -1,6 +1,6 @@
 <section id="publications" class="section publications" aria-labelledby="publications-heading">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <span class="section-tag">Publications</span>
       <h2 class="section-title" id="publications-heading">
         Research &amp; <span>Writing</span>
@@ -8,8 +8,8 @@
     </div>
 
     <div class="publications__list">
-      @for (pub of publications(); track pub.id) {
-        <article class="publications__item card" aria-label="{{ pub.title }}">
+      @for (pub of publications(); track pub.id; let i = $index) {
+        <article [class]="'publications__item card reveal reveal-stagger-' + (i % 4 + 1)" aria-label="{{ pub.title }}">
 
           <div class="publications__type-icon" aria-hidden="true">
             @if (pub.type === 'Publication') {

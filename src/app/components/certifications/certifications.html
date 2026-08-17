@@ -1,6 +1,6 @@
 <section id="certifications" class="section certifications" aria-labelledby="certifications-heading">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <span class="section-tag">Certifications</span>
       <h2 class="section-title" id="certifications-heading">
         Courses &amp; <span>Certifications</span>
@@ -8,8 +8,8 @@
     </div>
 
     <div class="certifications__grid">
-      @for (cert of certifications(); track cert.name) {
-        <div class="certifications__item card" role="listitem">
+      @for (cert of certifications(); track cert.name; let i = $index) {
+        <div [class]="'certifications__item card reveal reveal-stagger-' + (i % 4 + 1)" role="listitem">
           <div class="certifications__badge" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>

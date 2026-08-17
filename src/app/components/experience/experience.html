@@ -1,6 +1,6 @@
 <section id="experience" class="section experience" aria-labelledby="experience-heading">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <span class="section-tag">Experience</span>
       <h2 class="section-title" id="experience-heading">
         Work <span>Experience</span>
@@ -8,8 +8,8 @@
     </div>
 
     <div class="experience__timeline" role="list">
-      @for (exp of experience(); track exp.id) {
-        <article class="experience__item card" role="listitem">
+      @for (exp of experience(); track exp.id; let i = $index) {
+        <article [class]="'experience__item card reveal reveal-stagger-' + (i % 4 + 1)" role="listitem">
 
           <!-- Timeline dot -->
           <div class="experience__dot" aria-hidden="true"></div>
