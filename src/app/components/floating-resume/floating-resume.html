@@ -1,40 +1,28 @@
-<div class="floating-resume" role="region" aria-label="Resume quick access">
-  <div class="floating-resume__pill">
-    <!-- View Resume Action (Opens Google Drive viewer in new tab) -->
-    <a
-      [href]="resumeUrl()"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="floating-resume__action floating-resume__action--view"
-      title="View Resume in new page"
-      aria-label="View Resume in new page"
-    >
-      <svg class="floating-resume__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-        <polyline points="14 2 14 8 20 8"/>
-        <line x1="16" y1="13" x2="8" y2="13"/>
-        <line x1="16" y1="17" x2="8" y2="17"/>
-      </svg>
-      <span class="floating-resume__text">Resume</span>
-      <span class="floating-resume__chip">View</span>
-    </a>
+<aside class="resume-widget" role="complementary" aria-label="Resume quick link">
+  <a
+    [href]="resumeUrl()"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="resume-badge"
+    [style.transform]="transformStyle()"
+    title="Open Resume PDF in a new tab"
+    aria-label="Open Resume PDF in a new tab"
+  >
+    <!-- Document Icon -->
+    <svg class="resume-badge__icon resume-badge__icon--doc" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="16" y1="13" x2="8" y2="13"/>
+      <line x1="16" y1="17" x2="8" y2="17"/>
+    </svg>
 
-    <span class="floating-resume__divider" aria-hidden="true"></span>
+    <!-- Resume Label -->
+    <span class="resume-badge__label">Resume</span>
 
-    <!-- Instant Local PDF Download Action -->
-    <a
-      [href]="localDownloadUrl"
-      download="Dilip_Kumar_S_Resume.pdf"
-      class="floating-resume__action floating-resume__action--download"
-      title="Download Resume PDF instantly"
-      aria-label="Download Resume PDF instantly"
-    >
-      <svg class="floating-resume__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-        <polyline points="7 10 12 15 17 10"/>
-        <line x1="12" y1="15" x2="12" y2="3"/>
-      </svg>
-      <span class="floating-resume__chip floating-resume__chip--download">Download</span>
-    </a>
-  </div>
-</div>
+    <!-- Arrow / External Link Icon -->
+    <svg class="resume-badge__icon resume-badge__icon--arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="7" y1="17" x2="17" y2="7"/>
+      <polyline points="7 7 17 7 17 17"/>
+    </svg>
+  </a>
+</aside>
