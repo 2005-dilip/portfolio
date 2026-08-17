@@ -21,14 +21,13 @@
 
     <span class="floating-resume__divider" aria-hidden="true"></span>
 
-    <!-- Download Resume Action (Direct PDF download) -->
+    <!-- Instant Local PDF Download Action -->
     <a
-      [href]="downloadUrl()"
-      target="_blank"
-      rel="noopener noreferrer"
+      [href]="localDownloadUrl"
+      download="Dilip_Kumar_S_Resume.pdf"
       class="floating-resume__action floating-resume__action--download"
-      title="Download Resume PDF"
-      aria-label="Download Resume PDF"
+      title="Download Resume PDF instantly"
+      aria-label="Download Resume PDF instantly"
     >
       <svg class="floating-resume__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
