@@ -10,6 +10,7 @@ import { CertificationsComponent } from './components/certifications/certificati
 import { PublicationsComponent }  from './components/publications/publications';
 import { ContactComponent }       from './components/contact/contact';
 import { FloatingResumeComponent } from './components/floating-resume/floating-resume';
+import { ScrollToTopComponent }   from './components/scroll-to-top/scroll-to-top';
 import { ScrollRevealService }     from './services/scroll-reveal.service';
 
 @Component({
@@ -27,6 +28,7 @@ import { ScrollRevealService }     from './services/scroll-reveal.service';
     PublicationsComponent,
     ContactComponent,
     FloatingResumeComponent,
+    ScrollToTopComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',
