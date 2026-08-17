@@ -30,6 +30,7 @@ export interface Profile {
   professionalTitle: string;
   summary: string;
   focus: string[];
+  resumeUrl?: string | null;
 }
 
 // ---------------------------------------------------------------------------
