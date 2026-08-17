@@ -1,14 +1,17 @@
-<aside class="resume-widget" role="complementary" aria-label="Resume quick access">
-  <div
-    class="resume-badge"
-    [style.transform]="transformStyle()"
-  >
+<aside
+  class="resume-widget"
+  [class.resume-widget--stacked]="isScrolled()"
+  [style.transform]="transformStyle()"
+  role="complementary"
+  aria-label="Resume quick access"
+>
+  <div class="resume-badge-container">
     <!-- View Resume Action (Opens Google Drive viewer in new tab) -->
     <a
       [href]="resumeUrl()"
       target="_blank"
       rel="noopener noreferrer"
-      class="resume-badge__action resume-badge__action--view"
+      class="resume-badge-btn resume-badge-btn--view"
       title="View Resume in new page"
       aria-label="View Resume in new page"
     >
@@ -32,7 +35,7 @@
     <a
       [href]="localDownloadUrl"
       download="Dilip_Kumar_S_Resume.pdf"
-      class="resume-badge__action resume-badge__action--download"
+      class="resume-badge-btn resume-badge-btn--download"
       title="Download Resume PDF instantly"
       aria-label="Download Resume PDF instantly"
     >
@@ -41,7 +44,8 @@
         <polyline points="7 10 12 15 17 10"/>
         <line x1="12" y1="15" x2="12" y2="3"/>
       </svg>
-      <span class="resume-badge__tag resume-badge__tag--download">Download</span>
+      <span class="resume-badge__label resume-badge__label--download">Download</span>
+      <span class="resume-badge__tag resume-badge__tag--download">PDF</span>
     </a>
   </div>
 </aside>

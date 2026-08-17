@@ -11,6 +11,7 @@ export class FloatingResumeComponent {
   private readonly ps = inject(PortfolioService);
   private readonly el = inject(ElementRef);
 
+  readonly isScrolled = signal(false);
   readonly transformStyle = signal('translate3d(0px, 0px, 0px) scale(1)');
 
   readonly resumeUrl = computed(() => {
@@ -19,6 +20,14 @@ export class FloatingResumeComponent {
 
   readonly localDownloadUrl = 'Dilip_Kumar_S_Resume.pdf';
 
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    const scrolled = window.scrollY > 60;
+    if (this.isScrolled() !== scrolled) {
+      this.isScrolled.set(scrolled);
+    }
+  }
+
   @HostListener('window:mousemove', ['$event'])
   onMouseMove(event: MouseEvent): void {
     if (window.innerWidth < 768 || !window.matchMedia('(pointer: fine)').matches) {
@@ -26,18 +35,18 @@ export class FloatingResumeComponent {
       return;
     }
 
-    const badge = this.el.nativeElement.querySelector('.resume-badge');
-    if (!badge) return;
+    const widget = this.el.nativeElement.querySelector('.resume-widget');
+    if (!widget) return;
 
-    const rect = badge.getBoundingClientRect();
-    const badgeCenterX = rect.left + rect.width / 2;
-    const badgeCenterY = rect.top + rect.height / 2;
+    const rect = widget.getBoundingClientRect();
+    const widgetCenterX = rect.left + rect.width / 2;
+    const widgetCenterY = rect.top + rect.height / 2;
 
-    const distanceX = event.clientX - badgeCenterX;
-    const distanceY = event.clientY - badgeCenterY;
+    const distanceX = event.clientX - widgetCenterX;
+    const distanceY = event.clientY - widgetCenterY;
     const distance = Math.hypot(distanceX, distanceY);
 
-    const magneticRadius = 140;
+    const magneticRadius = 150;
 
     if (distance < magneticRadius) {
       const pullFactor = 1 - distance / magneticRadius;

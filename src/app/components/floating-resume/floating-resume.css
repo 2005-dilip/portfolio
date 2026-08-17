@@ -1,17 +1,20 @@
-/* Sticky Corner Resume Badge Widget */
+/* Sticky Corner Resume Widget Container */
 .resume-widget {
   position: fixed;
   bottom: 24px;
   right: 24px;
   z-index: 95;
-  pointer-events: none;
+  will-change: transform;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-/* Compact Premium Glass Badge (Container with Magnetic Animation) */
-.resume-badge {
-  pointer-events: auto;
-  display: inline-flex;
+/* Combined Side-by-Side Pill Container (Top of page) */
+.resume-badge-container {
+  display: flex;
   align-items: center;
+  gap: 0;
   padding: 4px;
   background: rgba(10, 14, 26, 0.85);
   backdrop-filter: blur(16px);
@@ -19,23 +22,21 @@
   border: 1px solid rgba(56, 189, 248, 0.35);
   border-radius: var(--radius-full, 9999px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.18);
-  will-change: transform, box-shadow, border-color;
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-              box-shadow 0.3s ease,
-              border-color 0.3s ease,
-              background 0.3s ease;
-  user-select: none;
-  -webkit-user-select: none;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.resume-badge:hover {
-  background: rgba(15, 23, 42, 0.92);
-  border-color: rgba(56, 189, 248, 0.65);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6), 0 0 28px rgba(56, 189, 248, 0.4);
+/* Divider Line in Combined Pill */
+.resume-badge__divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 0 2px;
+  opacity: 1;
+  transition: opacity 0.3s ease, margin 0.3s ease, width 0.3s ease;
 }
 
-/* Action Links Inside Badge */
-.resume-badge__action {
+/* Individual Action Buttons */
+.resume-badge-btn {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -47,7 +48,8 @@
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  border: 1px solid transparent;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
 
@@ -84,13 +86,6 @@
   transition: transform 0.25s ease, color 0.25s ease;
 }
 
-.resume-badge__divider {
-  width: 1px;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.15);
-  margin: 0 2px;
-}
-
 /* Download Specific Styling */
 .resume-badge__icon--download {
   color: #34d399;
@@ -102,62 +97,95 @@
   border-color: rgba(52, 211, 153, 0.35);
 }
 
-/* Hover States for Actions */
-.resume-badge__action--view:hover {
+/* Hover States when Combined */
+.resume-badge-btn--view:hover {
   background: rgba(56, 189, 248, 0.18);
-  color: #ffffff;
 }
 
-.resume-badge__action--view:hover .resume-badge__icon--doc {
+.resume-badge-btn--view:hover .resume-badge__icon--doc {
   transform: scale(1.15);
 }
 
-.resume-badge__action--view:hover .resume-badge__tag {
-  background: var(--color-accent, #38bdf8);
-  color: #0a0e1a;
-}
-
-.resume-badge__action--view:hover .resume-badge__arrow {
+.resume-badge-btn--view:hover .resume-badge__arrow {
   color: var(--color-accent, #38bdf8);
   transform: translate(2px, -2px);
 }
 
-.resume-badge__action--download:hover {
+.resume-badge-btn--download:hover {
   background: rgba(16, 185, 129, 0.2);
-  color: #ffffff;
 }
 
-.resume-badge__action--download:hover .resume-badge__icon--download {
+.resume-badge-btn--download:hover .resume-badge__icon--download {
   transform: translateY(2px);
 }
 
-.resume-badge__action--download:hover .resume-badge__tag--download {
-  background: #10b981;
-  color: #0a0e1a;
+/* ==========================================================================
+   SCROLLED STACKING ANIMATION MODE (.resume-widget--stacked)
+   ========================================================================== */
+.resume-widget--stacked .resume-badge-container {
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: 10px;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-color: transparent;
+  box-shadow: none;
+  padding: 0;
 }
 
-/* Active Click Effect */
-.resume-badge__action:active {
-  transform: scale(0.96);
+.resume-widget--stacked .resume-badge__divider {
+  opacity: 0;
+  width: 0;
+  margin: 0;
+  height: 0;
 }
 
-/* Responsive adjustments for mobile/tablet */
+.resume-widget--stacked .resume-badge-btn {
+  background: rgba(10, 14, 26, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.2);
+  padding: 10px 16px;
+  animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.resume-widget--stacked .resume-badge-btn--download {
+  border-color: rgba(52, 211, 153, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(52, 211, 153, 0.2);
+}
+
+.resume-widget--stacked .resume-badge-btn--view:hover {
+  background: rgba(15, 23, 42, 0.95);
+  border-color: var(--color-accent, #38bdf8);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6), 0 0 28px rgba(56, 189, 248, 0.45);
+  transform: translateY(-2px);
+}
+
+.resume-widget--stacked .resume-badge-btn--download:hover {
+  background: rgba(15, 23, 42, 0.95);
+  border-color: #34d399;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6), 0 0 28px rgba(52, 211, 153, 0.45);
+  transform: translateY(-2px);
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .resume-widget {
     bottom: 18px;
     right: 18px;
-  }
-
-  .resume-badge {
     transform: none !important;
-  }
-
-  .resume-badge__action {
-    padding: 6px 10px;
-    font-size: 0.8rem;
-  }
-
-  .resume-badge__label {
-    display: none;
   }
 }
