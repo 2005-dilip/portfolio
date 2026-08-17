@@ -1,0 +1,77 @@
+<section id="experience" class="section experience" aria-labelledby="experience-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Experience</span>
+      <h2 class="section-title" id="experience-heading">
+        Work <span>Experience</span>
+      </h2>
+    </div>
+
+    <div class="experience__timeline" role="list">
+      @for (exp of experience(); track exp.id) {
+        <article class="experience__item card" role="listitem">
+
+          <!-- Timeline dot -->
+          <div class="experience__dot" aria-hidden="true"></div>
+
+          <div class="experience__body">
+            <div class="experience__header">
+              <div>
+                <h3 class="experience__role">{{ exp.role }}</h3>
+                <p class="experience__org">{{ exp.organization }}</p>
+              </div>
+              @if (formatDateRange(exp)) {
+                <time class="experience__date font-mono">
+                  {{ formatDateRange(exp) }}
+                </time>
+              }
+            </div>
+
+            @if (exp.program) {
+              <p class="experience__program">
+                <span class="experience__label">Programme:</span>
+                {{ exp.program }}
+                @if (exp.track) {
+                  &mdash; {{ exp.track }}
+                }
+              </p>
+            }
+
+            @if (exp.area) {
+              <p class="experience__area">
+                <span class="experience__label">Area:</span>
+                {{ exp.area }}
+              </p>
+            }
+
+            @if (exp.context) {
+              <p class="experience__context">{{ exp.context }}</p>
+            }
+
+            @if (exp.status) {
+              <p class="experience__status">
+                <span class="tag tag--success">{{ exp.status }}</span>
+              </p>
+            }
+
+            @if (exp.technologies.length) {
+              <div class="experience__tech" role="list" aria-label="Technologies used">
+                @for (tech of exp.technologies; track tech) {
+                  <span class="tag" role="listitem">{{ tech }}</span>
+                }
+              </div>
+            }
+
+            @if (exp.highlights && exp.highlights.length) {
+              <ul class="experience__highlights" role="list">
+                @for (h of exp.highlights; track h) {
+                  <li class="experience__highlight-item">{{ h }}</li>
+                }
+              </ul>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

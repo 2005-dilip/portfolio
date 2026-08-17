@@ -1,0 +1,26 @@
+<section id="skills" class="section skills" aria-labelledby="skills-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Skills</span>
+      <h2 class="section-title" id="skills-heading">
+        Technical <span>Stack</span>
+      </h2>
+      <p class="section-subtitle">
+        Technologies and tools I work with across the full AI and software engineering stack.
+      </p>
+    </div>
+
+    <div class="skills__grid">
+      @for (group of skillGroups(); track group.label) {
+        <div class="skills__group card">
+          <h3 class="skills__group-label">{{ group.label }}</h3>
+          <div class="skills__items" role="list">
+            @for (item of group.items; track item) {
+              <span class="tag" role="listitem">{{ item }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

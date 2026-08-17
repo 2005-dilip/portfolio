@@ -1,0 +1,176 @@
+<section id="contact" class="section contact" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Contact</span>
+      <h2 class="section-title" id="contact-heading">
+        Let's <span>Connect</span>
+      </h2>
+      <p class="section-subtitle">
+        Open to collaborations, opportunities, and interesting AI projects.
+      </p>
+    </div>
+
+    <div class="contact__card card">
+      <div class="contact__content">
+
+        <div class="contact__info">
+          <h3 class="contact__name">{{ profile().name }}</h3>
+          <p class="contact__role">{{ profile().professionalTitle }}</p>
+
+          <div class="contact__links">
+            @if (contact().email) {
+              <a
+                class="contact__link"
+                [href]="'mailto:' + contact().email"
+                aria-label="Send email"
+              >
+                <span class="contact__link-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,7 12,13 2,7"/>
+                  </svg>
+                </span>
+                <div>
+                  <span class="contact__link-label">Email</span>
+                  <span class="contact__link-value">{{ contact().email }}</span>
+                </div>
+              </a>
+            }
+
+            @if (contact().mobile) {
+              <a
+                class="contact__link"
+                [href]="'tel:' + contact().mobile"
+                aria-label="Call phone"
+              >
+                <span class="contact__link-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </span>
+                <div>
+                  <span class="contact__link-label">Mobile</span>
+                  <span class="contact__link-value">{{ contact().mobile }}</span>
+                </div>
+              </a>
+            }
+
+            @if (socialLinks().linkedin) {
+              <a
+                class="contact__link"
+                [href]="socialLinks().linkedin!"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
+              >
+                <span class="contact__link-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </span>
+                <div>
+                  <span class="contact__link-label">LinkedIn</span>
+                  <span class="contact__link-value">Connect on LinkedIn</span>
+                </div>
+              </a>
+            }
+
+            @if (socialLinks().github) {
+              <a
+                class="contact__link"
+                [href]="socialLinks().github!"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub profile"
+              >
+                <span class="contact__link-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                </span>
+                <div>
+                  <span class="contact__link-label">GitHub</span>
+                  <span class="contact__link-value">github.com/dilip</span>
+                </div>
+              </a>
+            }
+
+            @if (socialLinks().geeksforgeeks) {
+              <a
+                class="contact__link"
+                [href]="socialLinks().geeksforgeeks!"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GeeksforGeeks profile"
+              >
+                <span class="contact__link-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M21.45 14.315c-.143.28-.334.532-.565.745a3.691 3.691 0 0 1-1.104.695 4.51 4.51 0 0 1-3.116-.016 3.79 3.79 0 0 1-2.135-2.078 3.571 3.571 0 0 1-.16-.373H17.4c.03.168.09.33.179.476.133.23.321.421.549.558.252.148.54.222.831.212a1.716 1.716 0 0 0 1.07-.345c.296-.234.474-.587.486-.96a1.197 1.197 0 0 0-.174-.645 1.307 1.307 0 0 0-.509-.464 1.6 1.6 0 0 0-.756-.173h-.467v-1.28h.467c.217.003.432-.052.621-.16.188-.107.345-.265.449-.459.104-.197.157-.419.148-.644a1.108 1.108 0 0 0-.431-.85 1.461 1.461 0 0 0-.98-.34 1.684 1.684 0 0 0-.768.19 1.402 1.402 0 0 0-.56.519 1.606 1.606 0 0 0-.183.522H14.4c.078-.49.271-.952.564-1.348a3.32 3.32 0 0 1 1.167-.985 3.44 3.44 0 0 1 1.561-.374c.57-.005 1.133.12 1.634.367.463.222.855.56 1.13.98.264.396.401.859.393 1.332.01.364-.09.723-.29 1.03-.198.3-.474.538-.797.688v.047c.395.11.735.35.97.681.24.345.368.754.363 1.172Z"/>
+                    <path d="M2.552 14.315c.143.28.334.532.565.745.243.22.527.392.838.509.327.126.676.189 1.028.184a4.5 4.5 0 0 0 1.088-.169 3.4 3.4 0 0 0 1.028-.526 3.79 3.79 0 0 0 .82-.873c.217-.34.378-.714.476-1.108H5.36a1.606 1.606 0 0 1-.183.522 1.402 1.402 0 0 1-.56.52 1.684 1.684 0 0 1-.768.189 1.461 1.461 0 0 1-.98-.34 1.108 1.108 0 0 1-.431-.849c-.01-.225.044-.447.148-.644.104-.194.261-.352.449-.46.19-.107.404-.163.621-.16h.467v-1.28h-.467a1.6 1.6 0 0 1-.756-.172 1.307 1.307 0 0 1-.509-.464 1.197 1.197 0 0 1-.174-.645c.012-.373.19-.726.486-.96.27-.216.6-.34.945-.345.292-.01.58.064.831.212.229.137.416.328.55.558.088.147.148.308.178.476h2.93a3.571 3.571 0 0 0-.16-.373 3.79 3.79 0 0 0-2.134-2.078 4.51 4.51 0 0 0-3.116-.016 3.691 3.691 0 0 0-1.104.695 2.85 2.85 0 0 0-.565.745 3.086 3.086 0 0 0-.272 1.31c-.01.364.09.723.29 1.03.198.3.474.538.797.688v.047a2.01 2.01 0 0 0-.97.681 1.84 1.84 0 0 0-.363 1.172c-.018.455.08.907.272 1.31Z"/>
+                    <path d="M12 20.5l-1.5-1.5h3L12 20.5zM12 3.5l1.5 1.5h-3L12 3.5z"/>
+                  </svg>
+                </span>
+                <div>
+                  <span class="contact__link-label">GeeksforGeeks</span>
+                  <span class="contact__link-value">GFG Profile</span>
+                </div>
+              </a>
+            }
+          </div>
+        </div>
+
+        <div class="contact__cta">
+          <p class="contact__cta-text">
+            Interested in working together or have a question? Reach out via email or connect on LinkedIn.
+          </p>
+          <div class="contact__cta-actions">
+            @if (contact().email) {
+              <a
+                class="btn btn--primary"
+                [href]="'mailto:' + contact().email"
+              >
+                Send Email
+              </a>
+            }
+            @if (socialLinks().linkedin) {
+              <a
+                class="btn btn--outline"
+                [href]="socialLinks().linkedin!"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            }
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+  <div class="container footer__inner">
+    <p class="footer__text">
+      Built with <span aria-label="Angular">Angular</span> by {{ profile().name }}
+    </p>
+    <div class="footer__links">
+      @if (socialLinks().github) {
+        <a [href]="socialLinks().github!" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+        </a>
+      }
+      @if (socialLinks().linkedin) {
+        <a [href]="socialLinks().linkedin!" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+      }
+    </div>
+  </div>
+</footer>

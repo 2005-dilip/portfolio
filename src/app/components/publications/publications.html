@@ -1,0 +1,54 @@
+<section id="publications" class="section publications" aria-labelledby="publications-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Publications</span>
+      <h2 class="section-title" id="publications-heading">
+        Research &amp; <span>Writing</span>
+      </h2>
+    </div>
+
+    <div class="publications__list">
+      @for (pub of publications(); track pub.id) {
+        <article class="publications__item card" aria-label="{{ pub.title }}">
+
+          <div class="publications__type-icon" aria-hidden="true">
+            @if (pub.type === 'Publication') {
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+            } @else {
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+            }
+          </div>
+
+          <div class="publications__content">
+            <div class="publications__header">
+              <span class="tag tag--violet">{{ pub.type }}</span>
+              <span class="publications__publisher font-mono">{{ pub.publisher }}</span>
+            </div>
+            <h3 class="publications__title">{{ pub.title }}</h3>
+            @if (pub.date) {
+              <time class="publications__date font-mono">{{ pub.date }}</time>
+            }
+          </div>
+
+          <a
+            class="publications__link btn btn--outline"
+            [href]="pub.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="'Read ' + pub.title"
+          >
+            Read
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+
+        </article>
+      }
+    </div>
+  </div>
+</section>

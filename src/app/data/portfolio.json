@@ -1,0 +1,442 @@
+{
+  "profile": {
+    "name": "Dilip Kumar S",
+    "professionalTitle": "AI & Data Science Engineer",
+    "summary": "AI & Data Science Engineer helping businesses turn ideas into practical AI solutions and full-stack applications, with hands-on experience in machine learning, computer vision, generative AI, Java, Spring Boot, and Angular. Currently working as a Programmer Analyst at Cognizant.",
+    "focus": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Computer Vision",
+      "Generative AI",
+      "NLP",
+      "Software Engineering"
+    ]
+  },
+  "education": [
+    {
+      "id": "panimalar-btech-aids",
+      "degree": "B.Tech",
+      "field": "Artificial Intelligence and Data Science",
+      "institution": "Panimalar Engineering College",
+      "status": "2022 – 2026",
+      "performance": "CGPA: 8.23 / 10.0",
+      "graduationYear": 2026
+    },
+    {
+      "id": "gk-shetty-hsc",
+      "degree": "HSC",
+      "field": "Higher Secondary",
+      "institution": "GK Shetty Vivekananda Vidyalaya Junior College",
+      "status": "2021 – 2022",
+      "performance": "Percentage: 89.39%",
+      "graduationYear": 2022
+    }
+  ],
+  "skills": {
+    "languagesAndFrameworks": [
+      "Python",
+      "Java",
+      "Spring Boot",
+      "Spring Boot Microservices",
+      "JavaScript",
+      "TypeScript",
+      "Angular",
+      "SQL",
+      "HTML",
+      "CSS",
+      "REST APIs"
+    ],
+    "aiAndLlm": [
+      "LangChain",
+      "OpenAI API",
+      "CrewAI",
+      "TensorFlow",
+      "Keras",
+      "OpenCV",
+      "NLP",
+      "LLM concepts",
+      "Computer Vision",
+      "Machine Learning",
+      "Generative AI"
+    ],
+    "dataAndVisualization": [
+      "Pandas",
+      "scikit-learn",
+      "Seaborn",
+      "Matplotlib",
+      "Plotly",
+      "Power BI",
+      "Streamlit",
+      "FastAPI"
+    ],
+    "cloudAndDevOps": [
+      "GitHub",
+      "CI/CD Pipelines",
+      "SonarQube"
+    ],
+    "tools": []
+  },
+  "experience": [
+    {
+      "id": "cognizant-programmer-analyst",
+      "organization": "Cognizant",
+      "role": "Programmer Analyst (Fullstack Angular)",
+      "area": "Full Stack Development",
+      "technologies": [
+        "Angular",
+        "TypeScript",
+        "Java",
+        "Spring Boot"
+      ],
+      "startDate": "2025-04-01",
+      "endDate": null,
+      "context": null,
+      "highlights": [
+        "Contributed to the development of a complex financial regulatory reporting system (RegReportX).",
+        "Engaged in full-stack development using Angular for the front end and Java/Spring Boot for backend API integration.",
+        "Collaborated with the team to build scalable enterprise banking modules and improve reporting workflows."
+      ]
+    },
+    {
+      "id": "cognizant-intern",
+      "organization": "Cognizant",
+      "role": "Programmer Analyst Intern",
+      "area": "Full Stack Development Internship",
+      "technologies": [
+        "Angular",
+        "TypeScript",
+        "Java",
+        "Spring Boot"
+      ],
+      "startDate": "2025-01-01",
+      "endDate": "2025-03-31",
+      "context": null,
+      "highlights": [
+        "Completed technical training and foundation development in Angular and Spring Boot full-stack engineering.",
+        "Assisted in initial module setups and API integrations for regulatory reporting applications."
+      ]
+    },
+    {
+      "id": "agilisium-consulting-intern",
+      "organization": "Agilisium Consulting",
+      "role": "Data Engineering Intern",
+      "area": "AI / Data Engineering",
+      "technologies": [
+        "OpenCV",
+        "OpenAI API",
+        "JavaScript",
+        "CSS",
+        "HTML"
+      ],
+      "startDate": "2024-06-01",
+      "endDate": "2024-09-30",
+      "context": null,
+      "highlights": [
+        "Implemented a live meeting video summarizer that increases efficiency by 80%.",
+        "Developed a gesture-based meeting summarizer to assist in presentations during meetings.",
+        "Implemented the Insightify web system to offer personalized learning for students and freshers."
+      ]
+    },
+    {
+      "id": "brainovision-futureskills-prime-intern",
+      "organization": "Brainovision Solutions India Pvt. Ltd. / FutureSkills Prime",
+      "role": "Data Science Intern",
+      "area": "Data Science",
+      "technologies": [],
+      "startDate": "2023-12-25",
+      "endDate": "2024-01-27",
+      "context": "AICTE-associated internship",
+      "highlights": []
+    }
+  ],
+  "projects": [
+    {
+      "id": "regreportx",
+      "title": "Regulatory Reporting System \u2013 RegReportX",
+      "category": "Bank Project",
+      "description": "Developed a regulatory reporting platform to streamline data validation, exception handling, and report generation workflows.",
+      "tools": [
+        "Java",
+        "Spring Boot",
+        "Angular",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "MySQL",
+        "REST APIs"
+      ],
+      "highlights": [
+        "Implemented role-based modules for Operation Officers, Compliance Analysts, Risk Analysts, and Reporting Officers to ensure controlled data processing and governance.",
+        "Designed and integrated RESTful APIs for data ingestion, correction logs, and report lifecycle management.",
+        "Built responsive user interfaces using Angular, TypeScript, HTML, and CSS to enable efficient user interaction and workflow tracking.",
+        "Implemented automated notification workflows to improve coordination between different user roles and enhance reporting efficiency."
+      ],
+      "image": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786895379/regulatory.png",
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786895379/regulatory.png",
+          "alt": "Regulatory Reporting System interface screenshot"
+        }
+      ],
+      "githubUrl": "https://github.com/Asmath-Akbar-Ali-T/RegReportX-2.0",
+      "liveUrl": null,
+      "externalUrl": null,
+      "metrics": {},
+      "featured": false
+    },
+    {
+      "id": "insightfy",
+      "title": "Insightfy \u2013 AI-Based Course Recommendation System",
+      "category": "AI / Recommendation System",
+      "description": "Built a course recommendation system integrating Udemy, Coursera, and edX data, filtered by title, rating, and difficulty.",
+      "tools": [
+        "Python",
+        "Pandas",
+        "scikit-learn",
+        "APIs",
+        "Udemy API",
+        "Coursera API",
+        "edX API",
+        "Mock APIs",
+        "Java",
+        "CSS",
+        "HTML"
+      ],
+      "highlights": [
+        "Integrated course data from multiple platforms.",
+        "Performed ETL processes on course data from multiple APIs.",
+        "Standardized and cleaned data for model training and deployment.",
+        "Applied collaborative and content-based filtering algorithms to analyze user history and course features.",
+        "Built a user-friendly interface to improve course discovery and user experience."
+      ],
+      "image": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786895379/insightify.png",
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786895379/insightify.png",
+          "alt": "Insightify AI course recommendation portal screenshot"
+        }
+      ],
+      "githubUrl": null,
+      "liveUrl": "https://insightify-a-life-changer-for-students.onrender.com/",
+      "externalUrl": null,
+      "metrics": {},
+      "featured": false
+    },
+    {
+      "id": "lumina",
+      "title": "AI-Based Healthcare Assistant \u2013 Lumina",
+      "category": "AI / Healthcare",
+      "description": "Developed a multi-functional AI healthcare assistant integrating prescription analysis, wound detection using a custom YOLO model, and psychometric testing for mental health monitoring.",
+      "tools": [
+        "Python",
+        "Gemini Flash 1.5",
+        "YOLO",
+        "CNN",
+        "LangChain",
+        "Roboflow",
+        "Ultralytics"
+      ],
+      "highlights": [
+        "Integrated Gemini Flash 1.5 for real-time prescription interpretation and health-related queries.",
+        "Implemented wound detection using a custom YOLO model.",
+        "Implemented a psychometric testing module with sentiment analysis.",
+        "Designed the system to identify early signs of mental health distress and provide triage recommendations.",
+        "Utilized LangChain to create an interactive conversational agent for health inquiries.",
+        "Provided personalized and context-aware responses."
+      ],
+      "image": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786775877/1740846238859.jpg",
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786775877/1740846238859.jpg",
+          "alt": "Lumina AI healthcare assistant interface screenshot 1"
+        },
+        {
+          "url": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786775877/1740846238927.jpg",
+          "alt": "Lumina AI healthcare assistant interface screenshot 2"
+        },
+        {
+          "url": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786775876/1740846237938.jpg",
+          "alt": "Lumina AI healthcare assistant interface screenshot 3"
+        },
+        {
+          "url": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786775876/1740846237553.jpg",
+          "alt": "Lumina AI healthcare assistant interface screenshot 4"
+        }
+      ],
+      "githubUrl": null,
+      "liveUrl": null,
+      "externalUrl": "https://drive.google.com/file/d/1KfXYDmZIK4g5ZeLB_yU2uQbfdD7tXz5H/view",
+      "metrics": {},
+      "featured": false
+    },
+    {
+      "id": "agv-path-tracking-navigation",
+      "title": "AGV Path Tracking and Navigation System",
+      "category": "Robotics / Embedded AI",
+      "description": "Developing an industrial AGV prototype with autonomous navigation, featuring lane detection and CNN-based steering prediction, with plans to add object detection for improved navigation and safety.",
+      "tools": [
+        "Python",
+        "Raspberry Pi",
+        "CNN",
+        "YOLO",
+        "Ultrasonic Sensor"
+      ],
+      "highlights": [
+        "Implemented lane detection and CNN-based steering prediction.",
+        "Implemented A* algorithm for shortest-path optimization with turn control.",
+        "Integrated turn decisions into navigation.",
+        "Employed a real-time localization system combining ultrasonic sensor data and camera input.",
+        "Designed the system to support switching between autonomous lane-following and manual override modes for operational safety."
+      ],
+      "image": null,
+      "gallery": [],
+      "githubUrl": null,
+      "liveUrl": null,
+      "externalUrl": "https://drive.google.com/file/d/1mmRW1RkBzScI1ysR62RE28m_WeI8wYGQ/view",
+      "metrics": {},
+      "featured": false
+    },
+    {
+      "id": "newspaper-ocr-summarization",
+      "title": "AI-Powered Newspaper OCR & Summarization",
+      "category": "AI / Computer Vision / NLP",
+      "description": "This project automates news extraction and summarization from newspaper articles using AI techniques. The system extracts images and text, generates a structured summary, and provides AI-generated voice narration for the news.",
+      "tools": [
+        "YOLOv8",
+        "Roboflow",
+        "Gemini Vision",
+        "OCR",
+        "OpenAI model",
+        "AI Summarization"
+      ],
+      "highlights": [
+        "Users upload a newspaper image, and a custom YOLOv8 model trained using Roboflow detects and extracts images and text from the article.",
+        "Gemini Vision enhances OCR text extraction accuracy.",
+        "Generates a structured AI summary of the article.",
+        "Uses an OpenAI model for AI-generated voice narration of the summary.",
+        "Final output includes a play button for narration, a news summary with key points, and a description of extracted images."
+      ],
+      "image": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786775541/1741880339762.jpg",
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786775541/1741880339762.jpg",
+          "alt": "Newspaper OCR and summarization interface screenshot 1"
+        },
+        {
+          "url": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786775541/1741880340557.jpg",
+          "alt": "Newspaper OCR and summarization interface screenshot 2"
+        },
+        {
+          "url": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786775541/1741880340308.jpg",
+          "alt": "Newspaper OCR and summarization interface screenshot 3"
+        },
+        {
+          "url": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786775540/1741880339258.jpg",
+          "alt": "Newspaper OCR and summarization interface screenshot 4"
+        }
+      ],
+      "githubUrl": "https://github.com/2005-dilip/NEWS_REPORT_OCR_ACTION",
+      "liveUrl": null,
+      "externalUrl": null,
+      "metrics": {
+        "mAP": "75.5%",
+        "precision": "82.7%",
+        "recall": "68.0%"
+      },
+      "featured": false
+    }
+  ],
+  "achievements": [
+    {
+      "id": "nextgen-ai-project-expo-2nd-prize",
+      "title": "2nd Prize \u2013 NEXTGEN AI Project Expo",
+      "associatedProject": "insightfy",
+      "organization": null,
+      "date": null,
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786777754/WhatsApp_Image_2026-08-15_at_12.26.30_PM_1.jpg",
+          "alt": "2nd Prize at NEXTGEN AI Project Expo award photo"
+        }
+      ]
+    },
+    {
+      "id": "cts-techcathon-2-best-tech-award",
+      "title": "Best Technology Used Award \u2013 CTS TECHCATHON 2.0",
+      "associatedProject": null,
+      "organization": "Cognizant",
+      "date": null,
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786777754/WhatsApp_Image_2026-08-15_at_12.26.30_PM.jpg",
+          "alt": "Best Technology Used Award at CTS TECHCATHON 2.0 photo 1"
+        },
+        {
+          "url": "https://res.cloudinary.com/awaaiqbl/image/upload/v1786777754/1727703904301.jpg",
+          "alt": "Best Technology Used Award at CTS TECHCATHON 2.0 photo 2"
+        }
+      ]
+    },
+    {
+      "id": "ieee-best-student-award-aids",
+      "title": "Best Student Award \u2013 AI&DS",
+      "associatedProject": null,
+      "organization": "IEEE",
+      "date": null,
+      "gallery": []
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Deep Learning",
+      "issuer": "NPTEL"
+    },
+    {
+      "name": "Data Science for Beginners",
+      "issuer": "NASSCOM"
+    },
+    {
+      "name": "GenAI Data Analytics Simulation",
+      "issuer": "TCS"
+    },
+    {
+      "name": "Computer Vision with Python",
+      "issuer": "Udemy"
+    },
+    {
+      "name": "Applied Generative AI",
+      "issuer": "Infosys"
+    },
+    {
+      "name": "Oracle Cloud Infrastructure 2025",
+      "issuer": "Oracle"
+    }
+  ],
+  "publications": [
+    {
+      "id": "insightfy-ijfmr-paper",
+      "title": "Insightfy: A Platform for the Betterment of Students",
+      "publisher": "IJFMR",
+      "url": "https://www.ijfmr.com/research-paper.php?id=41447",
+      "type": "Publication",
+      "date": null
+    },
+    {
+      "id": "translation-transformer-medium-article",
+      "title": "Building My First Translation Transformer Model (English-Tamil)",
+      "publisher": "Medium",
+      "url": "https://medium.com/@dilipkumar.26291111/-ee2ca18d62af?_branch_match_id=1592208765392472282&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9bLTU3JLM3VS87P1Q8KjyorN8wp9g1Isq8rSk1LLSrKzEuPTyrKLy9OLbL1ASpPTfHMAwARxdGWPwAAAA%3D%3D&_nonce=VWwVmCQD&source=social.linkedin",
+      "type": "Article",
+      "date": null
+    }
+  ],
+  "contact": {
+    "email": "dilipkumar.262911@gmail.com",
+    "mobile": "9080024561"
+  },
+  "socialLinks": {
+    "linkedin": "https://www.linkedin.com/in/dilipkumar11/",
+    "github": "https://github.com/dilip",
+    "geeksforgeeks": "https://www.geeksforgeeks.org/user/dilipkumarnxbi/"
+  }
+}
