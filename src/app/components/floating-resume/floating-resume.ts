@@ -17,6 +17,8 @@ export class FloatingResumeComponent {
     return this.ps.profile().resumeUrl || 'https://drive.google.com/file/d/1SgCFXdRm7x_omH08BvqMU_s_luNVBTM5/view?usp=sharing';
   });
 
+  readonly localDownloadUrl = 'Dilip_Kumar_S_Resume.pdf';
+
   @HostListener('window:mousemove', ['$event'])
   onMouseMove(event: MouseEvent): void {
     if (window.innerWidth < 768 || !window.matchMedia('(pointer: fine)').matches) {
@@ -35,7 +37,7 @@ export class FloatingResumeComponent {
     const distanceY = event.clientY - badgeCenterY;
     const distance = Math.hypot(distanceX, distanceY);
 
-    const magneticRadius = 140; // Activation distance in px
+    const magneticRadius = 140;
 
     if (distance < magneticRadius) {
       const pullFactor = 1 - distance / magneticRadius;

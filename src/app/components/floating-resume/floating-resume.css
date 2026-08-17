@@ -7,26 +7,18 @@
   pointer-events: none;
 }
 
-/* Compact Premium Glass Badge */
+/* Compact Premium Glass Badge (Container with Magnetic Animation) */
 .resume-badge {
   pointer-events: auto;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
+  padding: 4px;
   background: rgba(10, 14, 26, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(56, 189, 248, 0.35);
   border-radius: var(--radius-full, 9999px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.18);
-  color: #f8fafc;
-  text-decoration: none;
-  font-family: var(--font-display, system-ui, -apple-system, sans-serif);
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  cursor: pointer;
   will-change: transform, box-shadow, border-color;
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
               box-shadow 0.3s ease,
@@ -36,10 +28,32 @@
   -webkit-user-select: none;
 }
 
-/* Icons */
+.resume-badge:hover {
+  background: rgba(15, 23, 42, 0.92);
+  border-color: rgba(56, 189, 248, 0.65);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6), 0 0 28px rgba(56, 189, 248, 0.4);
+}
+
+/* Action Links Inside Badge */
+.resume-badge__action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  color: #f8fafc;
+  text-decoration: none;
+  border-radius: var(--radius-full, 9999px);
+  font-family: var(--font-display, system-ui, -apple-system, sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  white-space: nowrap;
+}
+
 .resume-badge__icon {
   flex-shrink: 0;
-  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), color 0.25s ease;
+  transition: transform 0.25s ease, color 0.25s ease;
 }
 
 .resume-badge__icon--doc {
@@ -51,33 +65,83 @@
   line-height: 1;
 }
 
-.resume-badge__icon--arrow {
-  color: rgba(248, 250, 252, 0.7);
-}
-
-/* Hover Effects */
-.resume-badge:hover {
-  background: rgba(15, 23, 42, 0.92);
-  border-color: rgba(56, 189, 248, 0.7);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6), 0 0 28px rgba(56, 189, 248, 0.45);
-}
-
-.resume-badge:hover .resume-badge__icon--doc {
+.resume-badge__tag {
+  background: rgba(56, 189, 248, 0.12);
   color: var(--color-accent, #38bdf8);
-  transform: scale(1.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 2px 7px;
+  border-radius: var(--radius-full, 9999px);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 0.25s ease;
 }
 
-.resume-badge:hover .resume-badge__icon--arrow {
+.resume-badge__arrow {
+  color: rgba(248, 250, 252, 0.6);
+  flex-shrink: 0;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.resume-badge__divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 0 2px;
+}
+
+/* Download Specific Styling */
+.resume-badge__icon--download {
+  color: #34d399;
+}
+
+.resume-badge__tag--download {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border-color: rgba(52, 211, 153, 0.35);
+}
+
+/* Hover States for Actions */
+.resume-badge__action--view:hover {
+  background: rgba(56, 189, 248, 0.18);
+  color: #ffffff;
+}
+
+.resume-badge__action--view:hover .resume-badge__icon--doc {
+  transform: scale(1.15);
+}
+
+.resume-badge__action--view:hover .resume-badge__tag {
+  background: var(--color-accent, #38bdf8);
+  color: #0a0e1a;
+}
+
+.resume-badge__action--view:hover .resume-badge__arrow {
   color: var(--color-accent, #38bdf8);
-  transform: translate(3px, -3px);
+  transform: translate(2px, -2px);
+}
+
+.resume-badge__action--download:hover {
+  background: rgba(16, 185, 129, 0.2);
+  color: #ffffff;
+}
+
+.resume-badge__action--download:hover .resume-badge__icon--download {
+  transform: translateY(2px);
+}
+
+.resume-badge__action--download:hover .resume-badge__tag--download {
+  background: #10b981;
+  color: #0a0e1a;
 }
 
 /* Active Click Effect */
-.resume-badge:active {
-  transform: scale(0.96) !important;
+.resume-badge__action:active {
+  transform: scale(0.96);
 }
 
-/* Responsive adjustments for mobile / tablet devices */
+/* Responsive adjustments for mobile/tablet */
 @media (max-width: 768px) {
   .resume-widget {
     bottom: 18px;
@@ -85,8 +149,15 @@
   }
 
   .resume-badge {
-    padding: 8px 14px;
-    font-size: 0.825rem;
     transform: none !important;
+  }
+
+  .resume-badge__action {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .resume-badge__label {
+    display: none;
   }
 }
