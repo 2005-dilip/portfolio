@@ -18,15 +18,17 @@ export class ScrollRevealService {
 
     const options: IntersectionObserverInit = {
       root: null,
-      rootMargin: '0px 0px -60px 0px',
-      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.08,
     };
 
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('reveal--visible');
-          this.observer?.unobserve(entry.target);
+        } else {
+          // Re-trigger animation every time user scrolls away and back
+          entry.target.classList.remove('reveal--visible');
         }
       });
     }, options);
@@ -39,7 +41,7 @@ export class ScrollRevealService {
 
   public refresh(): void {
     if (this.observer) {
-      const elements = document.querySelectorAll('.reveal:not(.reveal--visible)');
+      const elements = document.querySelectorAll('.reveal');
       elements.forEach((el) => this.observer?.observe(el));
     }
   }
