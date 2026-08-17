@@ -138,15 +138,26 @@
       ]
     },
     {
-      "id": "brainovision-futureskills-prime-intern",
-      "organization": "Brainovision Solutions India Pvt. Ltd. / FutureSkills Prime",
-      "role": "Data Science Intern",
-      "area": "Data Science",
-      "technologies": [],
-      "startDate": "2023-12-25",
-      "endDate": "2024-01-27",
-      "context": "AICTE-associated internship",
-      "highlights": []
+      "id": "infotact-solutions-intern",
+      "organization": "Infotact Solutions",
+      "role": "Data Analyst Intern",
+      "area": "Data Analysis & Machine Learning",
+      "technologies": [
+        "Python",
+        "Web Scraping",
+        "Luhn Algorithm",
+        "Data Visualization",
+        "Machine Learning"
+      ],
+      "startDate": "2025-01-01",
+      "endDate": "2025-03-31",
+      "context": null,
+      "highlights": [
+        "Analyzed real-time IPL data, extracting insights with visualization tools.",
+        "Collected and processed data through web scraping for analysis.",
+        "Built an advanced credit card fraud detection model using the Luhn Algorithm with 75% accuracy.",
+        "Refined AI/ML skills through hands-on model training and data analysis."
+      ]
     }
   ],
   "projects": [
