@@ -49,6 +49,22 @@
   flex-shrink: 0;
 }
 
+.navbar__logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.navbar__logo:hover .navbar__logo-img {
+  transform: scale(1.08);
+  border-color: var(--color-accent);
+}
+
 .navbar__logo-name {
   font-family: var(--font-display);
   font-weight: 600;
