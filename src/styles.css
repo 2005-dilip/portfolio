@@ -171,6 +171,18 @@ code, pre {
   padding-block: var(--section-padding-y);
 }
 
+#main-content {
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  #main-content {
+    padding-bottom: 90px;
+  }
+}
+
+
 /* --------------------------------------------------------------------------
    Section headings
    -------------------------------------------------------------------------- */

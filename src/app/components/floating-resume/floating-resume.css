@@ -198,8 +198,29 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .resume-widget {
-    bottom: 18px;
-    right: 18px;
+    bottom: 16px;
+    right: 16px;
     transform: none !important;
   }
+
+  .resume-badge-container {
+    padding: 3px 6px;
+  }
+
+  .resume-badge-btn {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    gap: 4px;
+  }
+
+  .resume-badge__tag,
+  .resume-badge__arrow {
+    display: none;
+  }
+
+  .resume-badge__divider {
+    height: 16px;
+    margin: 0 1px;
+  }
 }
+

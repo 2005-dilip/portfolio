@@ -267,14 +267,19 @@
 .navbar__backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 98;
-  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 999;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 /* Responsive */
 @media (max-width: 960px) {
   .navbar__nav {
+    display: none;
+  }
+
+  .navbar__actions {
     display: none;
   }
 
@@ -284,6 +289,14 @@
 
   .navbar__mobile {
     display: block;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    inset-inline-end: 0;
+    width: min(300px, 85vw);
+    padding-top: calc(var(--navbar-height) + var(--space-4));
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
   }
 
   .navbar__mobile-nav .btn {
@@ -297,3 +310,4 @@
     display: none;
   }
 }
+

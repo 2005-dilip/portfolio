@@ -517,22 +517,43 @@
   animation: fade-in 0.2s ease both;
 }
 
+/* ======================================================================
+   FULLSCREEN LIGHTBOX OVERLAY (Fixed z-index: 2000)
+   ====================================================================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(5, 7, 15, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  overflow: auto;
+  touch-action: pan-x pan-y pinch-zoom;
+  animation: fade-in 0.2s ease both;
+}
+
 .lightbox__close {
-  position: absolute;
-  top: var(--space-6);
-  right: var(--space-6);
+  position: fixed;
+  top: var(--space-4);
+  right: var(--space-4);
   z-index: 2010;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
   transition: all 0.2s ease;
 }
 
@@ -544,8 +565,10 @@
 }
 
 .lightbox__img {
-  max-width: 90vw;
-  max-height: 85vh;
+  max-width: 95vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
   object-fit: contain;
   border-radius: var(--radius-xl);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.95);
@@ -576,12 +599,42 @@
     grid-template-columns: 1fr;
   }
 
+  .modal-dialog {
+    max-height: 92vh;
+    border-radius: var(--radius-xl);
+  }
+
+  .modal-close {
+    top: var(--space-3);
+    right: var(--space-3);
+    width: 32px;
+    height: 32px;
+  }
+
   .modal-body {
-    padding: var(--space-4) var(--space-5) var(--space-6);
+    padding: var(--space-4) var(--space-4) var(--space-6);
   }
 
   .modal-banner {
-    height: 180px;
+    height: 160px;
+  }
+
+  .modal-category {
+    bottom: var(--space-3);
+    left: var(--space-4);
+  }
+
+  .banner-expand-badge {
+    bottom: var(--space-3);
+    right: var(--space-4);
+  }
+
+  .modal-metrics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .modal-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .modal-footer-actions {
@@ -592,4 +645,11 @@
     width: 100%;
     justify-content: center;
   }
+
+  .lightbox__img {
+    max-width: 100vw;
+    max-height: 80vh;
+    border-radius: var(--radius-md);
+  }
 }
+

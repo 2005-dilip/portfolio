@@ -162,24 +162,54 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
     this.lastDrawnFrame = frameIndex;
   }
 
+  private isMobileView(): boolean {
+    return typeof window !== 'undefined' && window.innerWidth < 768;
+  }
+
   /**
    * Compute Hero scroll progress (0..1) based on how far the Hero section
-   * has scrolled through the viewport.
+   * has scrolled through the viewport, with enhanced mobile mapping.
    */
   private updateTargetProgress(): void {
     const section = this.sectionRef?.nativeElement;
     if (!section) return;
 
     const rect = section.getBoundingClientRect();
-    const total = rect.height; // full scrollable distance of the hero
-    // How far the top of the hero has moved above the viewport top.
-    const scrolled = -rect.top;
-    const progress = total > 0 ? scrolled / total : 0;
-    this.targetProgress = Math.min(1, Math.max(0, progress));
+    const isMobile = this.isMobileView();
+
+    if (isMobile) {
+      // On mobile, scale progress over a shorter scroll range so full animation plays while hero is visible
+      const maxScroll = Math.max(1, window.innerHeight * 0.6);
+      const scrolled = -rect.top;
+      const progress = Math.min(1, Math.max(0, scrolled / maxScroll));
+      this.targetProgress = progress;
+    } else {
+      const total = rect.height;
+      const scrolled = -rect.top;
+      const progress = total > 0 ? scrolled / total : 0;
+      this.targetProgress = Math.min(1, Math.max(0, progress));
+    }
   }
 
-  /** rAF loop: smoothly ease currentProgress toward targetProgress. */
+  /** rAF loop: smoothly ease currentProgress toward targetProgress or auto-cycle on mobile. */
   private animate = (): void => {
+    const section = this.sectionRef?.nativeElement;
+    const isMobile = this.isMobileView();
+
+    if (isMobile && section) {
+      const rect = section.getBoundingClientRect();
+      const inView = rect.bottom > 0 && rect.top < window.innerHeight;
+
+      if (inView) {
+        // On mobile, smoothly advance progress continuously so all 240 frames play
+        this.targetProgress += 0.003;
+        if (this.targetProgress > 1) {
+          this.targetProgress = 0;
+          this.currentProgress = 0;
+        }
+      }
+    }
+
     const diff = this.targetProgress - this.currentProgress;
 
     // Snap when close enough to avoid endless micro-updates.
@@ -200,6 +230,7 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
 
     this.rafId = requestAnimationFrame(this.animate);
   };
+
 
   onLaptopEnter(): void {
     this.laptopHovered.set(true);
