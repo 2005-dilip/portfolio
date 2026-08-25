@@ -49,8 +49,9 @@
   font-weight: 600;
   letter-spacing: 0.02em;
   border: 1px solid transparent;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .resume-badge__text-group {
@@ -72,6 +73,7 @@
 .resume-badge__label {
   color: #f8fafc;
   line-height: 1;
+  transition: color 0.25s ease;
 }
 
 .resume-badge__tag {
@@ -106,25 +108,54 @@
 
 /* Hover States when Combined */
 .resume-badge-btn--view:hover {
-  background: rgba(56, 189, 248, 0.18);
+  background: rgba(56, 189, 248, 0.22);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
+  transform: translateY(-2px);
+}
+
+.resume-badge-btn--view:hover .resume-badge__label {
+  color: var(--color-accent, #38bdf8);
 }
 
 .resume-badge-btn--view:hover .resume-badge__icon--doc {
   transform: scale(1.15);
+  color: #7dd3fc;
+}
+
+.resume-badge-btn--view:hover .resume-badge__tag {
+  background: var(--color-accent, #38bdf8);
+  color: #0a0e1a;
+  border-color: var(--color-accent, #38bdf8);
 }
 
 .resume-badge-btn--view:hover .resume-badge__arrow {
   color: var(--color-accent, #38bdf8);
-  transform: translate(2px, -2px);
+  transform: translate(3px, -3px);
 }
 
 .resume-badge-btn--download:hover {
-  background: rgba(16, 185, 129, 0.2);
+  background: rgba(16, 185, 129, 0.22);
+  border-color: rgba(52, 211, 153, 0.5);
+  box-shadow: 0 0 18px rgba(52, 211, 153, 0.35);
+  transform: translateY(-2px);
+}
+
+.resume-badge-btn--download:hover .resume-badge__label {
+  color: #34d399;
 }
 
 .resume-badge-btn--download:hover .resume-badge__icon--download {
-  transform: translateY(2px);
+  transform: translateY(3px) scale(1.1);
+  color: #6ee7b7;
 }
+
+.resume-badge-btn--download:hover .resume-badge__tag {
+  background: #34d399;
+  color: #0a0e1a;
+  border-color: #34d399;
+}
+
 
 /* ==========================================================================
    SCROLLED ICON-ONLY STACKED MODE (.resume-widget--stacked)
